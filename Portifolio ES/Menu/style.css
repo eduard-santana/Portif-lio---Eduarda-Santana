@@ -1,0 +1,36 @@
+.navbar {
+    height: 72px;
+    background-color: #261C52;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--rosa);
+}
+/*Menu*/
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--rosa);
+}
+
+.navbar nav .ativo {
+    color: var(--rosa);
+    border-bottom: 2px solid var(--rosa);
+    padding-bottom: 10px;
+}
