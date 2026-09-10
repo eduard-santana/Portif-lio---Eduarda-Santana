@@ -1,0 +1,160 @@
+.certificados {
+    min-height: calc(100vh - 100px);
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 30px 35px 35px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.certificados__intro h2 {
+    color: #E51CAF;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.certificados__intro p {
+    color: #E5E1F5;
+
+    font-size: 14px;
+
+    margin-bottom: 60px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.certificados__cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.certificado__card {
+    min-height: 145px;
+
+    padding: 14px 12px;
+
+    border-radius: 25px;
+
+    background: rgba(38, 28, 82, 0.9);
+
+    border: 1px solid rgba(229, 28, 175, 0.8);
+
+    box-shadow:
+        5px 5px 0 rgba(229, 28, 175, 0.35);
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================
+   ÍCONE
+========================= */
+
+.certificado__icone {
+    width: 28px;
+    height: 28px;
+
+    color: #E51CAF;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   TÍTULO CARD
+========================= */
+
+.certificado__card h3 {
+    color: white;
+
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.certificado__card p {
+    color: #D8D3EA;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    flex: 1;
+}
+
+
+/* =========================
+   LINK
+========================= */
+
+.certificado__link {
+    color: #E51CAF;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    border-top: 2px solid rgba(229, 28, 175, 0.7);
+
+    padding-top: 7px;
+
+    margin-top: 8px;
+}
+
+
+/* ========================= Botão ========================= */
+
+.certificados__botao {
+    display: block;
+
+    width: 260px;
+
+    margin: 25px auto 0;
+
+    padding: 7px 15px;
+
+    border-radius: 25px;
+
+    background: #E51CAF;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.certificados__botao:hover {
+    background: #ff35c1;
+}
