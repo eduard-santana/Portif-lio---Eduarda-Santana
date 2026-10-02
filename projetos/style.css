@@ -25,7 +25,6 @@
     margin: 0;
 }
 
-
 /* ÁREA DOS PROJETOS + SERVIÇOS */
 .projetos__area {
     display: flex;
@@ -33,7 +32,6 @@
     gap: 35px;
     margin-top: 28px;
 }
-
 
 /* PARTE DOS PROJETOS */
 .projetos__lista {
@@ -49,7 +47,6 @@
     margin-bottom: 12px;
 }
 
-
 /* DOIS CARDS */
 .projetos__cards {
     display: flex;
@@ -57,7 +54,6 @@
     justify-content: flex-start;
     gap: 18px;
 }
-
 
 /* CARD */
 .projeto__card {
@@ -79,7 +75,6 @@
 .projeto__card:hover {
     transform: translateY(-5px);
 }
-
 
 /* IMAGEM DO CARD */
 .projeto__imagem {
@@ -154,7 +149,6 @@
 .projeto__link:hover {
     color: #FF4BC9;
 }
-
 
 /* BOTÃO VER TODOS */
 .projetos__botao {
