@@ -62,6 +62,8 @@ a {
 
     background: #27165f;
     z-index: 1000;
+
+    font-family: 'Dm sans';
 }
 /* ========================= Conteúdo ========================= */
 .navbar__inner {
@@ -75,12 +77,15 @@ a {
     gap: 40px;
 
     padding: 0 30px;
+
+    font-family: 'Dm sans';
 }
 /* ========================= Abas do menu ========================= */
 .navbar__tabs {
     display: flex;
     align-items: center;
     gap: 35px;
+    font-family: 'Dm sans';
 }
 
 .navbar__tabs {
@@ -94,6 +99,7 @@ a {
     padding: 10px 0;
 
     transition: 0.3s;
+
 }
 /* ========================= Navegação ========================= */
 /* Quando passar o mouse */
