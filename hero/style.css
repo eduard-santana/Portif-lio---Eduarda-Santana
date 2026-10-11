@@ -143,23 +143,18 @@
 /* ========================= Imagem ========================= */
 
 .hero__image {
-    width: 45%;
-
+    width: 100%;
+    min-heigth: 450px;
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     position: relative;
 }
 
 .hero__image img {
     width: 430px;
-
     max-width: 100%;
-
     position: relative;
-
     z-index: 2;
 }
 
@@ -167,13 +162,14 @@
 
 .hero__circle {
     position: absolute;
-
     width: 330px;
     height: 330px;
-
     border: 8px solid #E51CAF;
-
     border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     z-index: 1;
 }
