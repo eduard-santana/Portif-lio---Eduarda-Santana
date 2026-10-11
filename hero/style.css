@@ -93,13 +93,13 @@
     transition: 0.3s;
 }
 
-.hero__button--primary {
+.hero__button--curriculo {
     background: #E51CAF;
 
     color: white;
 }
 
-.hero__button--primary:hover {
+.hero__butons--curriculo:hover {
     background: #ff35c1;
 }
 
