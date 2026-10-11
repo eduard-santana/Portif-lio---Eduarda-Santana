@@ -117,26 +117,20 @@
 
 /* ========================= Redes Sociais ========================= */
 
-.hero__social {
+.hero__social-link {
     width: 38px;
     height: 38px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: #E51CAF;
-
     color: white;
-
     font-weight: bold;
-
     transition: 0.3s;
 }
 
-.hero__social:hover {
+.hero__social-link {
     transform: translateY(-3px);
 }
 
