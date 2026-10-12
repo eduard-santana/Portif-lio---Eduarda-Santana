@@ -124,10 +124,13 @@
     color: white;
     font-weight: bold;
     transition: 0.3s;
+    transform: translateY(-3px);
 }
 
-.hero__social {
-    transform: translateY(-3px);
+.hero__social img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 /* ========================= Imagem ========================= */
