@@ -136,7 +136,7 @@
 /* ========================= Imagem ========================= */
 
 .hero__image {
-    width: 100%;
+    width: 45%;
     min-height: 450px;
     display: flex;
     justify-content: center;
