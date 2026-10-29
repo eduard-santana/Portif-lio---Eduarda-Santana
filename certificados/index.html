@@ -1,122 +1,116 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"
+ rel="preconnect" href="https://fonts.gstatic.com" crossorigin
+href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
 <div class="certificados">
 
     <!-- TÍTULO E DESCRIÇÃO -->
     <div class="certificados__intro">
 
-        <h2>Minhas certificações</h2>
+        <h2>Minhas <strong>certificações</strong></h2>
 
         <p>
-            Aprendizados que me impulsionaram a ir mais longe
+            Aprendizados que me impulsionaram a ir mais longe.
         </p>
 
     </div>
 
+    <!-- Anotação Decorativa -->
 
-    <!-- CARDS -->
-    <div class="certificados__cards">
+    <div class="certificados__anotacao">
 
-        <!-- CIÊNCIAS CONTÁBEIS -->
-        <div class="certificado__card">
+        <span>Conhecimento<br>também é<br>conquista!</span>
 
-            <div class="certificado__icone">
-                ▣
-            </div>
-
-            <h3>
-                Ciências<br>
-                Contábeis
-            </h3>
-
-            <p>
-                Graduação<br>
-                UNIFG – Faculdade Guararapes<br>
-                2020 – 2024
-            </p>
-
-            <a href="curriculo/Diploma_Ciencias_Contabeis - Unifg.pdf" class="certificado__link">
-            <span aria-hidden="true">↓</span>
-                Baixar Certificado
-            </a>
-
-        </div>
-
-
-        <!-- EXCEL -->
-        <div class="certificado__card">
-
-            <div class="certificado__icone">
-                X
-            </div>
-
-            <h3>
-                Excel
-            </h3>
-
-            <p>
-                Rotinas Fiscais, apurações<br>
-                de imposto, obrigações<br>
-                acessórias e organização<br>
-                de documentos.
-            </p>
-
-            <a href="#" class="certificado__link">
-                ♧ &nbsp; Baixar Certificado
-            </a>
-
-        </div>
-
-
-        <!-- FINANÇAS -->
-        <div class="certificado__card">
-
-            <div class="certificado__icone">
-                ▣
-            </div>
-
-            <h3>
-                Finanças
-            </h3>
-
-            <p>
-                Rotinas Fiscais, apurações<br>
-                de imposto, obrigações<br>
-                acessórias e organização<br>
-                de documentos.
-            </p>
-
-            <a href="#" class="certificado__link">
-                ♧ &nbsp; Baixar Certificado
-            </a>
-
-        </div>
-
-
-        <!-- LOGÍSTICA -->
-        <div class="certificado__card">
-
-            <div class="certificado__icone">
-                ◈
-            </div>
-
-            <h3>
-                Logística
-            </h3>
-
-            <p>
-                Rotinas Fiscais, apurações<br>
-                de imposto, obrigações<br>
-                acessórias e organização<br>
-                de documentos.
-            </p>
-
-            <a href="#" class="certificado__link">
-                ♧ &nbsp; Baixar Certificado
-            </a>
-
-        </div>
-
+        <svg viewBox="0 0 60 55" aria-hidden="true">
+             <path d="M48 5 C28 8, 12 20, 10 43"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"/>
+            <path d="M3 35 L10 43 L17 36"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"/>
+        </svg>
     </div>
 
+    <!-- CARDS -->
+        <div class="certificados__cards">
+
+         <!-- Certificado 1 -->
+
+            <article class="certificado__card">
+                <div class="certificado-card__topo">
+                    <div class="certificado-card__icone">
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                        <span class="certificado-card__categoria">Graduação</span>
+                </div>
+
+                <h2>Ciências Contábeis</h2>
+                <p class="certificado-card__instituicao">Faculdade Guararapes</p>
+                <p class="certificado-card__descricao">
+                    Formação acadêmica com foco em contabilidade, finanças e gestão fiscal.
+                </p>
+
+            <a href="certificados/ciencias-contabeis.pdf"
+               class="certificado-card__link"
+               target="_blank"
+               rel="noopener noreferrer">
+                Ver certificado <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <!-- Certificado 2 -->
+        <article class="certificado__card">
+            <div class="certificado-card__topo">
+                <div class="certificado-card__icone">
+                    <i class="fa-solid fa-file-excel" aria-hidden="true"></i>
+                </div>
+                <span class="certificado-card__categoria">Curso</span>
+            </div>
+
+            <h2>Excel</h2>
+            <p class="certificado-card__instituicao">Instituição do curso</p>
+            <p class="certificado-card__descricao">
+                Aprendizado de ferramentas para organização, análise e apresentação de dados.
+            </p>
+
+            <a href="certificados/excel.pdf"
+               class="certificado-card__link"
+               target="_blank"
+               rel="noopener noreferrer">
+                Ver certificado <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+        </article>
+
+        <!-- Certificado 3 -->
+        <article class="certificado__card">
+            <div class="certificado-card__topo">
+                <div class="certificado-card__icone">
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                </div>
+                <span class="certificado-card__categoria">Curso</span>
+            </div>
+
+            <h2>Desenvolvimento Front-End</h2>
+                <p class="certificado-card__instituicao">SENAC</p>
+                    <p class="certificado-card__descricao">
+                        Aprendizado em HTML, CSS e JavaScript para criação de interfaces web.
+                    </p>
+
+                <a href="certificados/front-end.pdf"
+                class="certificado-card__link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Ver certificado <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+        </article>
+    </div>
 
     <!-- BOTÃO -->
     <a href="#todos-certificados" class="certificados__botao">

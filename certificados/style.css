@@ -1,25 +1,78 @@
+/* ========================= Padrão ========================= */
 .certificados {
-    min-height: calc(100vh - 100px);
-
-    max-width: 1200px;
-    margin: 0 auto;
-
-    padding: 30px 35px 35px;
+    min-height: 100vh;
+        padding: 55px 5.5% 35px;
+        color: #ffffff;
+        background:
+            radial-gradient(
+            circle at 90% 15%,
+            rgba(229, 28, 175, 0.10),
+            transparent 28%
+            ),
+        linear-gradient(135deg, #21134f, #160b3d 75%);
+    font-family: "DM Sans", sans-serif;
+}
+/* ========================= Anotação_Decoração ========================= */
+.certificados {
+    position: relative;
 }
 
+.certificados .certificados__anotacao {
+    position: absolute;
+    top: 35px;
+    right: 8%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-/* =========================
-   TÍTULO
-========================= */
+    color: var(--rosa-principal);
+    font-family: "Caveat", cursive;
+    font-size: 1.4rem;
+    line-height: 0.95;
+
+    transform: rotate(-7deg);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.certificados__anotacao svg {
+    width: 42px;
+    height: 38px;
+    margin-top: 5px;
+    margin-left: -20px;
+}
+
+/* Evita que a anotação fique sobre os cards */
+.certificados__grid {
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .certificados__anotacao {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: fit-content;
+        margin: 25px 15px 0 auto;
+    }
+
+    .certificados__grid {
+        margin-top: 20px;
+    }
+}
+/* ========================= Título ========================= */
 
 .certificados__intro h2 {
-    color: #E51CAF;
+    color: var(--rosa-principal);
 
     font-size: 28px;
 
     margin-bottom: 8px;
 }
-
+.certificados__intro h2 strong {
+     color: var(--branco);
+}
 .certificados__intro p {
     color: #E5E1F5;
 
@@ -27,43 +80,146 @@
 
     margin-bottom: 60px;
 }
-
-
-/* =========================
-   CARDS
-========================= */
+/* ========================= Grid dos Cards ========================= */
 
 .certificados__cards {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
 
-    grid-template-columns:
-        repeat(4, 1fr);
+/* ========================= Cards ========================= */
 
-    gap: 15px;
+.certificados__cards {
+    .certificados__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
 }
 
 .certificado__card {
-    min-height: 145px;
 
-    padding: 14px 12px;
-
-    border-radius: 25px;
-
-    background: rgba(38, 28, 82, 0.9);
-
-    border: 1px solid rgba(229, 28, 175, 0.8);
-
-    box-shadow:
-        5px 5px 0 rgba(229, 28, 175, 0.35);
-
-    position: relative;
-
+     position: relative;
     display: flex;
-
     flex-direction: column;
+    min-width: 0;
+    padding: 22px 20px 18px;
+    overflow: hidden;
+
+    background: rgba(13, 7, 43, 0.72);
+    border: 1px solid #b91bba;
+    border-radius: 22px;
+    border-bottom: 3px solid #e51caf;
+
+    box-shadow: 4px 5px 0 rgba(229, 28, 175, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.certificado-card:hover {
+
+    transform: translateY(-7px);
+    border-color: #ff42d0;
+    box-shadow:
+        0 12px 30px rgba(229, 28, 175, 0.16),
+        4px 5px 0 rgba(229, 28, 175, 0.22);
+}
+
+}
+
+/* ========================= Topo do Cards ========================= */
+
+.certificado-card__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.certificado-card__icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    color: #ff35ce;
+    font-size: 1.5rem;
+
+    background: rgba(229, 28, 175, 0.08);
+    border: 1px solid #e51caf;
+    border-radius: 13px;
+}
+
+.certificado-card__categoria {
+    display: inline-block;
+    max-width: 65%;
+    padding: 6px 12px;
+
+    color: #eadfff;
+    background: rgba(104, 47, 160, 0.25);
+    border: 1px solid #9450d4;
+    border-radius: 30px;
+
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* ========================= Informações ========================= */
+
+.certificado-card h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.certificado-card__instituicao {
+    margin: 0 0 7px;
+    color: #c9c1ed;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.certificado-card__periodo {
+    margin: 0 0 15px;
+    color: #e4dcff;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.certificado-card__descricao {
+    margin: 0 0 20px;
+    padding-top: 14px;
+
+    color: #d5cef2;
+    border-top: 1px solid rgba(164, 111, 219, 0.55);
+
+    font-size: 0.82rem;
+    line-height: 1.7;
 }
 
 
+/* ========================= Ícone - Graduação ========================= */
+.certificado__icone i {
+    color: var(--rosa-principal);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.certificado__card:hover .certificado__icone i {
+    transform: scale(1.15);
+}
 /* =========================
    ÍCONE
 ========================= */
@@ -82,9 +238,7 @@
 }
 
 
-/* =========================
-   TÍTULO CARD
-========================= */
+/* ========================= Título Card ========================= */
 
 .certificado__card h3 {
     color: white;
@@ -113,48 +267,166 @@
 
 
 /* =========================
-   LINK
+   Link do Certificados
 ========================= */
 
-.certificado__link {
-    color: #E51CAF;
+.certificado-card__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 
-    font-size: 9px;
+    margin-top: auto;
+    padding-top: 14px;
 
-    font-weight: bold;
+    color: #ff35ce;
+    border-top: 1px solid rgba(164, 111, 219, 0.45);
 
-    border-top: 2px solid rgba(229, 28, 175, 0.7);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
 
-    padding-top: 7px;
-
-    margin-top: 8px;
+    transition: color 0.3s ease;
 }
 
+.certificado-card__link span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+
+    color: #ffffff;
+    background: rgba(229, 28, 175, 0.18);
+    border: 1px solid #a94be0;
+    border-radius: 50%;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.certificado-card__link:hover {
+    color: #ffffff;
+}
+.certificado-card__link:hover span {
+    background: #e51caf;
+    transform: translateX(3px);
+}
 /* ========================= Botão ========================= */
 
 .certificados__botao {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-    width: 260px;
+    width: fit-content;
+    min-width: 290px;
+    margin: 35px auto 0;
+    padding: 16px 28px;
 
-    margin: 25px auto 0;
+    background: var(--rosa-principal);
+    color: var(--branco);
+    border: 1px solid var(--rosa-principal);
+    border-radius: 50px;
 
-    padding: 7px 15px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
 
-    border-radius: 25px;
-
-    background: #E51CAF;
-
-    color: white;
-
-    text-align: center;
-
-    font-size: 13px;
-
-    font-weight: bold;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
 }
 
 .certificados__botao:hover {
-    background: #ff35c1;
+    background: transparent;
+    color: var(--rosa-principal);
+    transform: translateY(-3px);
+}
+
+.certificados__botao i {
+    transition: transform 0.3s ease;
+}
+
+.certificados__botao:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 480px) {
+    .certificados__botao {
+        min-width: 0;
+        width: 100%;
+    }
+}
+/* TABLETS */
+
+@media (max-width: 1100px) {
+    .certificados {
+        padding: 45px 4%;
+    }
+
+    .certificados__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .certificados {
+        padding: 35px 5%;
+    }
+
+    .certificados__titulo {
+        margin-bottom: 25px;
+    }
+
+    .certificados__titulo h1 {
+        font-size: 2.5rem;
+    }
+
+    .certificados__titulo p {
+        font-size: 0.9rem;
+    }
+
+    .certificados__grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .certificado-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .certificado-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .certificados__botao {
+        width: 100%;
+        min-width: 0;
+        margin-top: 28px;
+    }
+}
+
+/* ACESSIBILIDADE: MOVIMENTO REDUZIDO */
+
+@media (prefers-reduced-motion: reduce) {
+    .certificado-card,
+    .certificado-card__link,
+    .certificado-card__link span,
+    .certificados__botao {
+        transition: none;
+    }
+
+    .certificado-card:hover,
+    .certificados__botao:hover {
+        transform: none;
+    }
 }
