@@ -25,14 +25,17 @@
 }
 
 .hero__subtitle {
-    font-size: 22px;
+    display: inline-block;
+    padding: 25px 45px;
+    border: 1px solid rgba(229, 28, 175, 0.4);
+    border-radius: 12px;
+    text-align: center;}
 
-    color: #B9B0E8;
-
-    margin-bottom: 30px;
-
-    font-weight: 200;
-}
+.hero__subtitle p {
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 30px;}
 
 .hero h1 {
     font-size: 58px;

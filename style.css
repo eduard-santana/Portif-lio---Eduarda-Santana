@@ -49,36 +49,34 @@ a {
 }
 /* ========================= Menu ========================= */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-
-    display:flex;
+     position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(94%, 1480px);
+    height: 82px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
-
-    background: #27165f;
+    padding: 0 35px;
+    background: rgba(38, 28, 82, 0.94);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(229, 28, 175, 0.2);
+    border-radius: 60px;
     z-index: 1000;
-
-    font-family: 'Dm sans';
+    box-shadow: 0 8px 30px rgba(15, 5, 40, 0.18);
+    transition: all 0.3s ease
 }
 /* ========================= Conteúdo ========================= */
 .navbar__inner {
+    width: 100%;
+    max-width: 1400px;
     height: 100%;
-
-    max-width: 1200px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
-    gap: 40px;
-
-    padding: 0 30px;
-
-    font-family: 'Dm sans';
+    justify-content: space-between;
+    gap: 30px;
 }
 /* ========================= Abas do menu ========================= */
 .navbar__tabs {
@@ -103,10 +101,29 @@ a {
 }
 /* ========================= Navegação ========================= */
 /* Quando passar o mouse */
+.navbar__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.navbar__tabs a:hover {
-    color: var(--rosa);
+    gap: 35px;
 }
+.navbar__tab {
+    position: relative;
+
+    color: var(--branco);
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    padding: 10px 0;
+
+    transition: color 0.3s ease;
+}
+
 /* Página selecionada */
 
 .navbar__tabs .navbar__tab.is-active {
@@ -125,6 +142,12 @@ a {
     }
 }
 /* ========================= Logo ========================= */
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
 .navbar__brand-icon {
     position: relative;
     display: block;
@@ -132,64 +155,73 @@ a {
     width: 55px;
     height: 65px;
 
-    margin-right: 35px;
-
-    font-family: 'Fraunces';
+    font-family: 'Fraunces', serif;
 }
-/*E*/
 .navbar__brand-icon span:first-child {
     position: absolute;
     top: 0;
     left: 0;
 
-    color: #e600a9;
+    color: var(--rosa-principal);
     font-size: 36px;
     font-weight: bold;
     line-height: 1;
 }
-/*S*/
 .navbar__brand-icon span:last-child {
     position: absolute;
     top: 23px;
     left: 22px;
 
-    color: white;
+    color: var(--branco);
     font-size: 36px;
     font-weight: bold;
     line-height: 1;
-
 }
-/*/*/
 .navbar__brand-icon b {
-   position: absolute;
+    position: absolute;
     top: 9px;
     left: 18px;
-    color: white;
+
+    color: var(--branco);
     font-size: 40px;
     font-weight: normal;
     line-height: 1;
 }
 /* ========================= Botão Contrate-Me ========================= */
 .navbar__button {
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background-color: #e51caf;
-    color: white;
+    margin-left: 10px;
 
-    text-decoration: none;
+    padding: 12px 24px;
 
-    padding: 10px 16px;
-    border: 2px solid #9B8FE8;
+    background: var(--rosa-principal);
+    color: var(--branco);
 
-    border-radius: 30px;
+    border: 2px solid var(--roxo-claro);
+    border-radius: 40px;
 
-    font-size: 21px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
 
-    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
-.contrate:hover {
-    background-color: #ff19bc;
+.navbar__button:hover {
+    background: transparent;
+    color: var(--rosa-principal);
+
+    border-color: var(--rosa-principal);
+
+    box-shadow: 0 0 20px rgba(229, 28, 175, 0.3);
+
+    transform: translateY(-2px);
 }
 /* ========================= Área Principal ========================= */
 main {
@@ -360,4 +392,150 @@ main {
     color: #FFFFFF;
 
     text-align: center;
+}
+/* MENU HAMBÚRGUER */
+
+.navbar__toggle {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.navbar__toggle span,
+.navbar__toggle span::before,
+.navbar__toggle span::after {
+    display: block;
+
+    width: 25px;
+    height: 3px;
+
+    background: var(--rosa-principal);
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.navbar__toggle span::before,
+.navbar__toggle span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.navbar__toggle span::before {
+    top: -8px;
+}
+
+.navbar__toggle span::after {
+    top: 8px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+    .navbar {
+        width: 96%;
+        padding: 0 22px;
+    }
+
+    .navbar__inner {
+        gap: 18px;
+    }
+
+    .navbar__tabs {
+        gap: 20px;
+    }
+
+    .navbar__tab {
+        font-size: 14px;
+    }
+
+    .navbar__button {
+        padding: 10px 17px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        top: 10px;
+        height: 75px;
+        border-radius: 22px;
+    }
+
+    .navbar__inner {
+        justify-content: space-between;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__tabs {
+        display: none;
+
+        position: absolute;
+        top: 85px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 18px;
+        padding: 25px;
+
+        background: rgba(38, 28, 82, 0.98);
+        border: 1px solid rgba(229, 28, 175, 0.2);
+        border-radius: 20px;
+    }
+
+    .navbar__tabs.is-open {
+        display: flex;
+    }
+
+    .navbar__button {
+        display: none;
+    }
+
+    /* ÍCONES DO NAVBAR */
+
+.navbar__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar__tab i {
+    color: var(--rosa-principal);
+    font-size: 19px;
+    transition: transform 0.3s ease,
+                color 0.3s ease;
+}
+
+.navbar__tab:hover i {
+    transform: translateY(-3px);
+    color: var(--rosa-principal);
+}
+
+.navbar__tab.is-active i {
+    color: var(--rosa-principal);
+}
+
+/* ÍCONE DO BOTÃO CONTRATE-ME */
+
+.navbar__button i {
+    margin-right: 8px;
+    font-size: 16px;
+}
 }
