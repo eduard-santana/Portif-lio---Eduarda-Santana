@@ -25,20 +25,30 @@
 }
 
 .hero__subtitle {
-    width: fit-content;
-    padding: 8px 13px;
-    margin: 0 0 18px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 2px solid var(--rosa-principal);
-    border-radius: 3px;
+    padding: 8px 15px;
+    margin-bottom: 22px;
+
+    background: rgba(38, 28, 82, 0.45);
+    border: 1px solid rgba(229, 28, 175, 0.35);
+    border-radius: 50px;
 
     color: #eee8ff;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 0.3px;
-    line-height: 1.5;}
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+
+    box-shadow: 0 0 15px rgba(229, 28, 175, 0.08);
+}
+
+.hero__subtitle i {
+    color: var(--rosa-principal);
+    font-size: 15px;
+}
 
 .hero h1 {
     font-size: 58px;
