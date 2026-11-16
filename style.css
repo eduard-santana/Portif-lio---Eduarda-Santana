@@ -37,12 +37,13 @@ body {
     padding-top: 110px;
 
     background:
-        radial-gradient(
-            circle at top right,
-            rgba(229, 28, 175, 0.08),
-            transparent 35%
-        ),
-        var(--roxo-fundo);
+            radial-gradient(
+            circle at 90% 15%,
+            rgba(229, 28, 175, 0.10),
+            transparent 28%
+            ),
+            linear-gradient(135deg, #21134f, #160b3d 75%);
+    background-attachment: fixed;
 
     font-family: 'DM Sans', sans-serif;
     color: var(--branco);
@@ -57,12 +58,6 @@ a {
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* =====================================================
    3. NAVBAR
 ===================================================== */
