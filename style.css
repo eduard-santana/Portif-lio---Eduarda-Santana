@@ -10,12 +10,18 @@
 }
 
 :root {
-    --roxo-escuro: #261C52;
-    --roxo: #5841C4;
-    --roxo-claro: #9B8FE8;
+    /* Roxos */
+    --roxo-fundo: #170F3F;
+    --roxo-card: #1E1450;
+    --roxo-menu: #22165A;
+
+    /* Rosa principal */
     --rosa-principal: #E51CAF;
+    --rosa-botao: #D0127A;
+
+    /* Textos */
     --branco: #FFFFFF;
-    --cinza: #C8C1D8;
+    --lavanda: #E8DDF5;
 }
 
 /* =====================================================
@@ -31,12 +37,12 @@ body {
     padding-top: 110px;
 
     background:
-        url("img/f-estrela-5.png") center / cover no-repeat fixed,
-        linear-gradient(
-            to top,
-            #2A1F5E 0%,
-            #5841C4 100%
-        );
+        radial-gradient(
+            circle at top right,
+            rgba(229, 28, 175, 0.08),
+            transparent 35%
+        ),
+        var(--roxo-fundo);
 
     font-family: 'DM Sans', sans-serif;
     color: var(--branco);
@@ -75,14 +81,14 @@ img {
 
     padding: 0 35px;
 
-    background: rgba(38, 28, 82, 0.94);
+    background: rgba(34, 22, 90, 0.96);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 
     border: 1px solid rgba(229, 28, 175, 0.18);
     border-radius: 60px;
 
-    box-shadow: 0 8px 30px rgba(15, 5, 40, 0.15);
+    box-shadow: 0 8px 30px rgba(15, 5, 40, 0.20);
 
     z-index: 1000;
 }
@@ -102,8 +108,6 @@ img {
 /* =====================================================
    4. LOGO E/S
 ===================================================== */
-
-/* LOGO E/S */
 
 .navbar__brand {
     position: relative;
@@ -263,18 +267,18 @@ img {
     justify-content: center;
 
     gap: 9px;
-    padding: 10px 23px;
+    padding: 11px 22px;
 
-    background: rgba(229, 28, 175, 0.08);
+    background: transparent;
 
-    border: 1px solid rgba(229, 28, 175, 0.55);
+    border: 1px solid rgba(229, 28, 175, 0.65);
     border-radius: 30px;
 
     color: var(--branco);
 
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.2px;
 
     white-space: nowrap;
@@ -285,13 +289,22 @@ img {
 
 .navbar__button i {
     font-size: 14px;
+    color: var(--rosa-principal);
+
+    transition: transform 0.3s ease;
 }
 
 .navbar__button:hover {
-    background: rgba(229, 28, 175, 0.17);
+    background: rgba(229, 28, 175, 0.10);
     border-color: var(--rosa-principal);
 
-    box-shadow: 0 0 12px rgba(229, 28, 175, 0.12);
+    color: var(--rosa-principal);
+
+    transform: translateY(-2px);
+}
+
+.navbar__button:hover i {
+    transform: translateX(3px);
 }
 
 /* =====================================================
@@ -365,12 +378,12 @@ main {
     padding: 40px 8%;
 
     background:
-        url("img/fundo-estrelas.png") center / cover no-repeat,
-        linear-gradient(
-            to top,
-            #2A1F5E 0%,
-            #5841C4 100%
-        );
+        radial-gradient(
+            circle at top right,
+            rgba(229, 28, 175, 0.08),
+            transparent 35%
+        ),
+        var(--roxo-fundo);
 
     overflow: hidden;
 }
@@ -416,19 +429,21 @@ main {
     margin-top: 35px;
     padding: 13px 45px;
 
-    background: var(--rosa-principal);
+    background: transparent;
 
     color: var(--branco);
+    border: 1px solid var(--rosa-principal);
     border-radius: 30px;
 
-    font-weight: bold;
+    font-weight: 500;
 
     transition: all 0.3s ease;
 }
 
 .erro404__button:hover {
     transform: translateY(-3px);
-    background: #FF35C1;
+    background: rgba(229, 28, 175, 0.12);
+    color: var(--rosa-principal);
 }
 
 /* Personagem */
@@ -456,11 +471,9 @@ main {
 .site-footer {
     padding: 20px;
 
-    background: linear-gradient(
-        to top,
-        #9B8FE8 0%,
-        #5841C4 100%
-    );
+    background: var(--roxo-menu);
+
+    border-top: 1px solid rgba(229, 28, 175, 0.18);
 
     color: var(--branco);
 
@@ -550,7 +563,7 @@ main {
         gap: 16px;
         padding: 25px;
 
-        background: rgba(38, 28, 82, 0.98);
+        background: rgba(34, 22, 90, 0.98);
 
         border: 1px solid rgba(229, 28, 175, 0.2);
         border-radius: 20px;

@@ -1,28 +1,32 @@
-.hero {
-    min-height: calc(100vh - 100px);
 
+
+/* =========================
+   HERO - ESTRUTURA PRINCIPAL
+========================= */
+
+.hero {
+    min-height: calc(100vh - 110px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 1200px;
-    margin: 0 auto;
-
-    padding: 60px 70px;
-
-    position: relative;
-
-    overflow: hidden;
+    gap: 40px;
+    padding: 55px 5.5%;
+    color: #FFFFFF;
+    font-family: "DM Sans", sans-serif;
 }
 
-/* ========================= Texto ========================= */
+/* =========================
+   CONTEÚDO DO HERO
+========================= */
 
 .hero__content {
     width: 55%;
-
-    position: relative;
-    z-index: 2;
+    max-width: 600px;
 }
+
+/* =========================
+   SUBTÍTULO
+========================= */
 
 .hero__subtitle {
     display: inline-flex;
@@ -32,17 +36,14 @@
     padding: 8px 15px;
     margin-bottom: 22px;
 
-    background: rgba(38, 28, 82, 0.45);
+    background: rgba(13, 7, 43, 0.72);
     border: 1px solid rgba(229, 28, 175, 0.35);
     border-radius: 50px;
 
-    color: #eee8ff;
-    font-family: 'DM Sans', sans-serif;
+    color: #E5E1F5;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.2px;
-
-    box-shadow: 0 0 15px rgba(229, 28, 175, 0.08);
 }
 
 .hero__subtitle i {
@@ -50,44 +51,40 @@
     font-size: 15px;
 }
 
+/* =========================
+   TÍTULO
+========================= */
+
 .hero h1 {
     font-size: 58px;
     line-height: 1.05;
-
     margin-bottom: 10px;
+    color: #FFFFFF;
 }
 
 .hero h1 span {
     display: block;
-
     color: #E51CAF;
 }
 
 .hero h2 {
     font-size: 22px;
-
-    font-weight: normal;
-
-    color: #FFFFFF;
-
-    margin-bottom: 30px;
-
     font-weight: 300;
+    color: #FFFFFF;
+    margin-bottom: 30px;
 }
 
 .hero__text {
     max-width: 560px;
-
     font-size: 16px;
-
     line-height: 1.6;
-
     color: #E5E1F5;
-
     margin-bottom: 25px;
 }
 
-/* ========================= Botoes========================= */
+/* =========================
+   BOTÕES
+========================= */
 
 .hero__buttons {
     display: flex;
@@ -100,55 +97,84 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+
     padding: 12px 24px;
-    border: 1px solid #d7c8ff;
+
+    border: 1px solid #B9B0E8;
     border-radius: 30px;
+
     text-decoration: none;
-    color: #ffffff;
+    color: #FFFFFF;
     background: transparent;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
 }
+
+/* BOTÃO DOWNLOAD CV */
 
 .hero__button--curriculo {
     background: #E51CAF;
-    color: white;
+    color: #FFFFFF;
+    border: 1px solid #E51CAF;
 }
 
 .hero__button--curriculo:hover {
-    background-color: #c81796;
-    border-color: #c81796;
+    background: #FFFFFF;
+    color: #D0127A;
+    border-color: #FFFFFF;
+    transform: translateY(-3px);
 }
 
-.hero__button--outline {
-    border: 1px solid #B9B0E8;
+/* BOTÃO VER PROJETOS */
 
-    color: white;
+.hero__button--outline {
+    background: transparent;
+    border: 1px solid #B9B0E8;
+    color: #FFFFFF;
 }
 
 .hero__button--outline:hover {
-    background: #E51CAF;
-
+    background: rgba(229, 28, 175, 0.10);
     border-color: #E51CAF;
+    color: #FFFFFF;
 }
 
-/* ========================= Redes Sociais ========================= */
+/* =========================
+   REDES SOCIAIS
+========================= */
+
+.hero__social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
 .hero__social a {
     width: 46px;
     height: 46px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
     background: #E51CAF;
-    color: white;
+    border: 1px solid #E51CAF;
+
+    color: #FFFFFF;
     font-weight: bold;
-    transition: 0.3s;
-    transform: translateY(-3px);
+
+    transition: all 0.3s ease;
 }
 
 .hero__social a:hover {
-    background-color: #a8127d;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    transform: translateY(-3px);
 }
 
 .hero__social img {
@@ -156,50 +182,185 @@
     height: 40px;
     object-fit: contain;
     display: block;
-}
-.hero__social:hover {
-    background-color: transparent;
-    border-color: transparent;
+    transition: transform 0.3s ease;
 }
 
-.hero__social img {
-    transition: filter 0.3s ease;
+.hero__social a:hover img {
+    transform: scale(1.08);
 }
 
-.hero__social:hover img {
-    filter: brightness(0.6);
-}
-
-/* ========================= Imagem ========================= */
+/* =========================
+   IMAGEM DA BONECA
+========================= */
 
 .hero__image {
     width: 45%;
     min-height: 450px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: relative;
+    flex-shrink: 0;
 }
 
 .hero__image img {
     width: 430px;
     max-width: 100%;
+
+    height: auto;
+    object-fit: contain;
+
     position: relative;
     z-index: 2;
 }
 
-/* CÍRCULO ATRÁS DA IMAGEM */
+/* =========================
+   CÍRCULO ATRÁS DA IMAGEM
+========================= */
 
 .hero__circle {
     position: absolute;
+
     width: 330px;
     height: 330px;
+
     border: 8px solid #E51CAF;
     border-radius: 50%;
 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 
+    transform: translate(-50%, -50%);
     z-index: 1;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+    .hero {
+        gap: 20px;
+        padding: 45px 4%;
+    }
+
+    .hero__content {
+        width: 55%;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero__image {
+        width: 45%;
+        min-height: 380px;
+    }
+
+    .hero__circle {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 5%;
+        gap: 20px;
+    }
+
+    .hero__content {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .hero__text {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+    }
+
+    .hero__buttons,
+    .hero__social {
+        justify-content: center;
+    }
+
+    .hero__image {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .hero__image img {
+        width: 340px;
+    }
+
+    .hero__circle {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* =========================
+   CELULARES PEQUENOS
+========================= */
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero__buttons {
+        width: 100%;
+    }
+
+    .hero__button {
+        width: 100%;
+    }
+
+    .hero__image {
+        min-height: 300px;
+    }
+
+    .hero__image img {
+        width: 290px;
+    }
+
+    .hero__circle {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__button,
+    .hero__social a,
+    .hero__social img {
+        transition: none;
+    }
+
+    .hero__button:hover,
+    .hero__social a:hover {
+        transform: none;
+    }
 }
