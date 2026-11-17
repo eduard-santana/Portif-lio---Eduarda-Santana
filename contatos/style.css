@@ -1,199 +1,315 @@
-.contatos {
-    min-height: calc(100vh - 100px);
 
+/* ========================= VARIÁVEIS ========================= */
+.contatos {
+    --rosa: #E51CAF;
+    --rosa-hover: #ff35c1;
+    --rosa-sombra: rgba(229, 28, 175, 0.25);
+    --lilas: #9B8FE8;
+    --card: #120a2e;
+    --texto: #ffffff;
+    --texto-2: #c9c2e0;
+    --texto-3: #9a92b8;
+    --linha: rgba(155, 143, 232, 0.25);
+}
+
+.contatos *,
+.contatos *::before,
+.contatos *::after {
+    box-sizing: border-box;
+}
+
+/* ========================= SEÇÃO ========================= */
+.contatos {
     max-width: 1200px;
     margin: 0 auto;
-
-    padding: 30px 40px 20px;
-
-    position: relative;
-
-    overflow: hidden;
+    padding: 120px 40px 0;   /* espaço para o menu fixo não cobrir o título */
+    scroll-margin-top: 90px; /* ao clicar em "Contatos" no menu */
+    color: var(--texto);
 }
 
 /* ========================= CONTEÚDO ========================= */
-
 .contatos__conteudo {
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 40px;
-
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 56px;
     align-items: start;
 }
 
 /* ========================= INFORMAÇÕES ========================= */
-
-.contatos__info {
-    padding-top: 0;
-}
-
 .contatos__info h2 {
-    color: #E51CAF;
-
-    font-size: 27px;
-
-    margin-bottom: 20px;
+    font-size: clamp(26px, 2.6vw, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+.contatos__info h2 span {
+    color: var(--rosa);
 }
 
 .contatos__info > p {
-    color: white;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    max-width: 350px;
-
-    margin-bottom: 25px;
+    color: var(--texto-2);
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 46ch;
+    margin: 0 0 32px;
 }
 
 /* ========================= CONTATOS ========================= */
-
 .contato__item {
     display: flex;
-
     align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 20px;
-
-    color: white;
-
-    font-size: 14px;
+    gap: 16px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background: var(--card);
+    border: 1px solid var(--linha);
+    border-radius: 14px;
+    font-size: 15px;
+    transition: border-color .2s;
+}
+.contato__item:hover {
+    border-color: var(--rosa);
 }
 
 .contato__icone {
-    width: 25px;
-
-    color: #E51CAF;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    text-align: center;
+    flex: none;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1.5px solid var(--rosa);
+    border-radius: 10px;
+    color: var(--rosa);
 }
 
-.contato__item a {
-    color: white;
-
-    font-weight: bold;
-
-    text-decoration: underline;
+.contato__texto {
+    min-width: 0;
 }
-
+.contato__rotulo {
+    display: block;
+    font-size: 12px;
+    color: var(--texto-3);
+    margin-bottom: 2px;
+}
+.contato__item a,
+.contato__valor {
+    display: block;
+    color: var(--texto);
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+.contato__item a:hover {
+    color: var(--rosa);
+}
 
 /* ========================= FORMULÁRIO ========================= */
-
 .contatos__formulario {
-    padding: 10px;
+    padding: 32px;
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--rosa);
+    box-shadow: 6px 6px 0 var(--rosa-sombra);
+}
 
-    border-radius: 8px;
-
-    background: rgba(38, 28, 82, 0.65);
-
-    border: 1px solid rgba(229, 28, 175, 0.7);
-
-    box-shadow:
-        5px 5px 0 rgba(229, 28, 175, 0.35);
+.contatos__formulario h3 {
+    font-size: 20px;
+    margin: 0 0 4px;
+}
+.contatos__formulario .contatos__sub {
+    font-size: 14px;
+    color: var(--texto-2);
+    margin: 0 0 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--linha);
 }
 
 .contatos__formulario form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contatos__campo {
     display: flex;
-
     flex-direction: column;
+    gap: 7px;
+}
+.contatos__campo--largo {
+    grid-column: 1 / -1;
+}
 
-    gap: 5px;
+.contatos__campo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-2);
 }
 
 .contatos__formulario input,
 .contatos__formulario textarea {
     width: 100%;
-
-    border: 1px solid #9B8FE8;
-
-    border-radius: 6px;
-
-    background: transparent;
-
-    color: white;
-
-    padding: 8px 12px;
-
-    font-family: inherit;
-
-    outline: none;
-}
-
-.contatos__formulario input {
-    height: 28px;
+    padding: 12px 14px;
+    border: 1px solid rgba(155, 143, 232, 0.45);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--texto);
+    font: inherit;
+    font-size: 15px;
+    transition: border-color .2s, background-color .2s;
 }
 
 .contatos__formulario textarea {
-    height: 115px;
-
-    resize: none;
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.5;
 }
 
 .contatos__formulario input::placeholder,
 .contatos__formulario textarea::placeholder {
-    color: white;
-
-    opacity: 1;
+    color: var(--texto-3);
 }
 
 .contatos__formulario input:focus,
 .contatos__formulario textarea:focus {
-    border-color: #E51CAF;
+    outline: none;
+    border-color: var(--rosa);
+    background-color: rgba(229, 28, 175, 0.05);
 }
 
+/* Contorno visível para quem navega pelo teclado */
+.contatos a:focus-visible,
+.contatos button:focus-visible {
+    outline: 2px solid var(--lilas);
+    outline-offset: 3px;
+}
+
+/* Campo invisível anti-spam */
+.contatos__isca {
+    position: absolute;
+    left: -9999px;
+}
 
 /* ========================= BOTÃO ========================= */
+.contatos__rodape {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 6px;
+}
+.contatos__aviso {
+    font-size: 13px;
+    color: var(--texto-3);
+    margin: 0;
+    max-width: 32ch;
+    line-height: 1.5;
+}
 
 .contatos__formulario button {
-    align-self: flex-end;
-
-    margin-top: 15px;
-
-    padding: 8px 20px;
-
+    padding: 13px 28px;
     border: none;
-
-    border-radius: 20px;
-
-    background: #E51CAF;
-
-    color: white;
-
-    font-weight: bold;
-
+    border-radius: 999px;
+    background: var(--rosa);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
     cursor: pointer;
+    transition: background-color .2s;
 }
-
 .contatos__formulario button:hover {
-    background: #ff35c1;
+    background: var(--rosa-hover);
+}
+.contatos__formulario button:disabled {
+    opacity: .6;
+    cursor: wait;
 }
 
+/* Mensagem de enviado / erro */
+.contatos__retorno {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: none;
+}
+.contatos__retorno.is-ok {
+    display: block;
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, .4);
+    background: rgba(74, 222, 128, .08);
+}
+.contatos__retorno.is-erro {
+    display: block;
+    color: #ff7a9c;
+    border: 1px solid rgba(255, 122, 156, .4);
+    background: rgba(255, 122, 156, .08);
+}
 
 /* ========================= IMAGEM ========================= */
-
+/* Sai do position:absolute: agora ela fica no fluxo, abaixo do
+   conteúdo, e não sobrepõe nada em telas menores */
 .contatos__imagem {
-    position: absolute;
-
-    bottom: -5px;
-
-    left: 48%;
-
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+}
+.contatos__imagem img {
     width: 150px;
-
-    z-index: 3;
+    height: auto;
+    display: block;
 }
 
-.contatos__imagem img {
-    width: 100%;
+/* ========================= RESPONSIVO ========================= */
+@media (max-width: 960px) {
+    .contatos {
+        padding: 100px 24px 0;
+    }
+    .contatos__conteudo {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
 
-    display: block;
+@media (max-width: 560px) {
+    .contatos {
+        padding: 90px 16px 0;
+    }
+    .contatos__formulario {
+        padding: 24px 18px;
+    }
+    .contatos__formulario form {
+        grid-template-columns: 1fr;
+    }
+    .contatos__rodape {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    .contatos__imagem {
+        margin-top: 40px;
+    }
+    .contatos__imagem img {
+        width: 110px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contatos * {
+        transition: none !important;
+    }
+}
+
+/* TESTE - apagar depois */
+.contatos__formulario {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+section.contatos {
+    height: auto !important;
+    overflow: visible !important;
 }

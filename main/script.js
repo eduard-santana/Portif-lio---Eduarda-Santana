@@ -131,6 +131,58 @@ async function iniciar() {
     }
 
     ativarSecaoAtual();
+    iniciarFormularioContato();
+}
+
+// =========================
+// Função Contatos
+// =========================
+
+function iniciarFormularioContato() {
+    var form = document.getElementById('form-contato');
+    if (!form) return;
+    var retorno = form.querySelector('.contatos__retorno');
+    var botao = form.querySelector('button[type="submit"]');
+
+    function mostrar(msg, tipo) {
+        retorno.textContent = msg;
+        retorno.className = 'contatos__retorno ' + (tipo === 'ok' ? 'is-ok' : 'is-erro');
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            mostrar('Preencha nome, e-mail válido, assunto e mensagem para enviar.', 'erro');
+            var invalido = form.querySelector(':invalid');
+            if (invalido) invalido.focus();
+            return;
+        }
+
+        botao.disabled = true;
+        botao.textContent = 'Enviando…';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(function (resp) {
+            if (resp.ok) {
+                form.reset();
+                mostrar('Mensagem enviada. Obrigada pelo contato, retorno em breve!', 'ok');
+            } else {
+                mostrar('Não foi possível enviar agora. Tente de novo ou escreva para eduarda.santanacont@gmail.com.', 'erro');
+            }
+        })
+        .catch(function () {
+            mostrar('Sem conexão no momento. Verifique sua internet e tente de novo.', 'erro');
+        })
+        .finally(function () {
+            botao.disabled = false;
+            botao.textContent = 'Enviar mensagem';
+        });
+    });
 }
 
 iniciar();

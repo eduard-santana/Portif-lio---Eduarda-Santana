@@ -1,39 +1,55 @@
-<div class="contatos">
+<section class="contatos">
 
     <div class="contatos__conteudo">
 
         <!-- INFORMAÇÕES -->
         <div class="contatos__info">
 
-            <h2>Vamos Conversar?</h2>
+            <h2><span>Vamos</span> conversar?</h2>
 
             <p>
-                Estou sempre aberta a novas oportunidades e
-                projetos.
+                Estou sempre aberta a novas oportunidades e projetos.
+                Envie uma mensagem pelo formulário ou fale comigo pelos canais abaixo.
             </p>
 
             <div class="contato__item">
-                <span class="contato__icone">✉</span>
-                <a href="mailto:eduarda.santanacont@gmail.com">
-                    eduarda.santanacont@gmail.com
-                </a>
+                <span class="contato__icone" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </span>
+                <div class="contato__texto">
+                    <span class="contato__rotulo">E-mail</span>
+                    <a href="mailto:eduarda.santanacont@gmail.com">eduarda.santanacont@gmail.com</a>
+                </div>
             </div>
 
             <div class="contato__item">
-                <span class="contato__icone">●</span>
-                <span>(81) 9 7113-8726</span>
+                <span class="contato__icone" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+                </span>
+                <div class="contato__texto">
+                    <span class="contato__rotulo">Telefone / WhatsApp</span>
+                    <a href="https://wa.me/5581971138726" target="_blank" rel="noopener">(81) 9 7113-8726</a>
+                </div>
             </div>
 
             <div class="contato__item">
-                <span class="contato__icone">●</span>
-                <span>Recife - PE</span>
+                <span class="contato__icone" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div class="contato__texto">
+                    <span class="contato__rotulo">Localização</span>
+                    <span class="contato__valor">Recife – PE · remoto ou presencial</span>
+                </div>
             </div>
 
             <div class="contato__item">
-                <span class="contato__icone">in</span>
-                <a href="www.linkedin.com/in/eduard-santana-">
-                    LinkedIn
-                </a>
+                <span class="contato__icone" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </span>
+                <div class="contato__texto">
+                    <span class="contato__rotulo">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/eduard-santana-" target="_blank" rel="noopener noreferrer">Eduarda Santana</a>
+                </div>
             </div>
 
         </div>
@@ -42,35 +58,41 @@
         <!-- FORMULÁRIO -->
         <div class="contatos__formulario">
 
-            <form>
+            <h3>Envie uma mensagem</h3>
+            <p class="contatos__sub">Respondo em até 2 dias úteis.</p>
 
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    required
-                >
+            <!-- Troque SEU_ID pelo código do Formspree -->
+            <form id="form-contato" action="https://formspree.io/f/SEU_ID" method="POST" novalidate>
 
-                <input
-                    type="email"
-                    placeholder="E-mail"
-                    required
-                >
+                <div class="contatos__campo">
+                    <label for="ct-nome">Nome</label>
+                    <input id="ct-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required>
+                </div>
 
-                <input
-                    type="text"
-                    placeholder="Assunto"
-                    required
-                >
+                <div class="contatos__campo">
+                    <label for="ct-email">E-mail</label>
+                    <input id="ct-email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" required>
+                </div>
 
-                <textarea
-                    placeholder="Mensagem"
-                    required
-                ></textarea>
+                <div class="contatos__campo contatos__campo--largo">
+                    <label for="ct-assunto">Assunto</label>
+                    <input id="ct-assunto" name="assunto" type="text" placeholder="Ex.: vaga de assistente contábil" required>
+                </div>
 
-                <button type="submit">
-                    Enviar mensagem
-                </button>
+                <div class="contatos__campo contatos__campo--largo">
+                    <label for="ct-msg">Mensagem</label>
+                    <textarea id="ct-msg" name="mensagem" placeholder="Conte um pouco sobre a vaga ou o projeto" required></textarea>
+                </div>
 
+                <input type="hidden" name="_subject" value="Novo contato pelo portfólio">
+                <input class="contatos__isca" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="contatos__rodape">
+                    <p class="contatos__aviso">Seus dados serão usados apenas para responder a este contato.</p>
+                    <button type="submit">Enviar mensagem</button>
+                </div>
+
+                <p class="contatos__retorno" role="status" aria-live="polite"></p>
             </form>
 
         </div>
@@ -80,12 +102,8 @@
 
     <!-- PERSONAGEM -->
     <div class="contatos__imagem">
-
-        <img
-            src="img/Boneca com fone.png"
-            alt="Ilustração de Eduarda"
-        >
-
+        <img src="img/boneca-com-fone.png" alt="" width="150" height="190" loading="lazy">
     </div>
 
-</div>
+</section>
+
