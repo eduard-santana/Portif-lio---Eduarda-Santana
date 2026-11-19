@@ -105,10 +105,10 @@
     border-radius: 30px;
 
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--branco);
     background: transparent;
 
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-principal), Arial, sans-serif;;
     font-size: 14px;
 
     transition: all 0.3s ease;
@@ -123,9 +123,9 @@
 }
 
 .hero__button--curriculo:hover {
-    background: #FFFFFF;
+    background: var(--branco);
     color: #D0127A;
-    border-color: #FFFFFF;
+    border-color: var(--branco);
     transform: translateY(-3px);
 }
 
@@ -134,13 +134,14 @@
 .hero__button--outline {
     background: transparent;
     border: 1px solid #B9B0E8;
-    color: #FFFFFF;
+    color: var(--branco);
 }
 
 .hero__button--outline:hover {
     background: rgba(229, 28, 175, 0.10);
     border-color: #E51CAF;
-    color: #FFFFFF;
+    color: var(--branco);
+    transform: translateY(-3px)
 }
 
 /* =========================
@@ -148,12 +149,6 @@
 ========================= */
 
 .hero__social {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.hero__social a {
     width: 46px;
     height: 46px;
 
@@ -162,27 +157,41 @@
     justify-content: center;
 
     border-radius: 50%;
-    background: #E51CAF;
-    border: 1px solid #E51CAF;
+    background: var(--rosa-principal);
+    border: none;
 
-    color: #FFFFFF;
-    font-weight: bold;
+    color: var(--branco);
+    font-size: 30px;
 
-    transition: all 0.3s ease;
+    transition: var(--transicao);
 }
 
-.hero__social a:hover {
-    background: #FFFFFF;
-    border-color: #FFFFFF;
+.hero__social:hover {
+    background: var(--branco);
+    border-color: var(--branco);
+    color: var(--rosa-principal);
+
     transform: translateY(-3px);
 }
 
+/* Efeito ao passar o mouse */
+.hero__social a:hover {
+    background: var(--branco);
+    border-color: var(--branco);
+    color: var(--rosa-principal);
+
+    transform: translateY(-3px);
+}
+
+/* Imagens dos ícones */
 .hero__social img {
     width: 40px;
     height: 40px;
+
     object-fit: contain;
     display: block;
-    transition: transform 0.3s ease;
+
+    transition: var(--transicao);
 }
 
 .hero__social a:hover img {
@@ -204,7 +213,6 @@
     position: relative;
     flex-shrink: 0;
 }
-
 .hero__image img {
     width: 430px;
     max-width: 100%;
@@ -214,6 +222,10 @@
 
     position: relative;
     z-index: 2;
+    transition: transform 0.4s ease;
+}
+.hero__image img:hover {
+    transform: translateY(-5px) scale(1.03);
 }
 
 /* =========================

@@ -1,52 +1,55 @@
+
+/* =========================
+   SEÇÃO SOBRE
+========================= */
+
 .sobre {
     min-height: calc(100vh - 100px);
-
     padding: 35px 45px 40px;
-
     max-width: 1200px;
     margin: 0 auto;
-
     position: relative;
 }
 
-/* ========================= TÍTULO ========================= */
+/* =========================
+   TÍTULO
+========================= */
 
 .sobre__titulo h2 {
-    color: #E51CAF;
-
+    color: var(--rosa-principal);
+    font-family: var(--font-principal);
     font-size: 28px;
-
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
 .sobre__titulo p {
     max-width: 650px;
-
-    color: #E5E1F5;
-
+    color: var(--texto-secundario);
+    font-family: var(--font-principal);
     font-size: 14px;
-
-    line-height: 1.5;
-
-    margin-bottom: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
-/* ======================== CONTEÚDO ========================= */
+/* =========================
+   CONTEÚDO
+========================= */
 
 .sobre__conteudo {
-    position: static;
+    position: relative;
+    width: 100%;
 }
 
-/* ========================= IMAGEM ========================= */
-.sobre__intro {
-    position: relative;
-}
+/* =========================
+   IMAGEM
+========================= */
 
 .sobre__imagem {
     position: absolute;
     right: 60px;
-    top: 0;
-    width: 220px;
+    top: -125px;
+    width: 150px;
     z-index: 2;
 }
 
@@ -54,130 +57,269 @@
     width: 100%;
     height: auto;
     display: block;
-}
-.sobre__imagem {
-    max-width: 150px;
-}
-
-/* ========================= CARDS ========================= */
-
-.sobre__cards img {
-     width: 40px;
-    height: 40px;
     object-fit: contain;
+    transition: transform var(--transicao);
 }
-.sobre__card:hover {
-    transform: translate(-3px);
+
+.sobre__imagem img:hover {
+    transform: translateY(-5px) scale(1.04);
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .sobre__cards {
     display: flex;
     gap: 20px;
     width: 100%;
 }
+
 .sobre__card {
     flex: 1;
-
+    min-width: 0;
     min-height: 180px;
-
     padding: 18px;
 
-    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
 
-    background: rgba(38, 28, 82, 0.85);
+    border-radius: 22px;
+    background: var(--roxo-card);
+    border: 1px solid var(--borda-padrao);
 
-    border: 1px solid rgba(229, 28, 175, 0.7);
+    box-shadow: var(--sombra-padrao);
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.2);
-
-    position: relative;
+    transition: transform var(--transicao),
+                border-color var(--transicao),
+                box-shadow var(--transicao);
 }
+
+.sobre__card:hover {
+    transform: translateY(-5px);
+    border-color: var(--rosa-principal);
+    box-shadow: var(--sombra-hover);
+}
+
+/* ÍCONES */
 
 .sobre__card-icon {
-    color: #E51CAF;
-
-    font-size: 24px;
-
-    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
+
+.sobre__card-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform var(--transicao);
+}
+
+.sobre__card:hover .sobre__card-icon img {
+    transform: scale(1.08);
+}
+
+/* TÍTULOS */
 
 .sobre__card h3 {
+    color: var(--branco);
+    font-family: var(--font-principal);
     font-size: 17px;
-
+    font-weight: 600;
     margin-bottom: 8px;
 }
+
+/* DESCRIÇÃO */
 
 .sobre__card p {
-    color: #D8D3EA;
-
+    color: var(--texto-secundario);
+    font-family: var(--font-principal);
     font-size: 12px;
-
-    line-height: 1.5;
-
-    margin-bottom: 8px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    flex-grow: 1;
 }
+
+/* LINKS */
 
 .sobre__card a {
-    color: #E51CAF;
+    display: inline-block;
+    width: fit-content;
 
+    color: var(--rosa-principal);
+    font-family: var(--font-principal);
     font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
 
-    font-weight: bold;
+    transition: color var(--transicao),
+                transform var(--transicao);
 }
 
-/* ========================= CHAMADA FINAL ========================= */
+.sobre__card a:hover {
+    color: var(--rosa-hover);
+    transform: translateX(4px);
+}
+
+/* =========================
+   CHAMADA FINAL
+========================= */
 
 .sobre__contrate {
     margin-top: 28px;
-
     min-height: 55px;
-
-    padding: 8px 18px;
+    padding: 12px 20px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
+    gap: 20px;
 
     border-radius: 30px;
+    background: var(--roxo-card);
+    border: 1px solid var(--borda-padrao);
 
-    background: rgba(38, 28, 82, 0.9);
+    box-shadow: var(--sombra-padrao);
 
-    border: 1px solid rgba(229, 28, 175, 0.7);
+    transition: transform var(--transicao),
+                border-color var(--transicao),
+                box-shadow var(--transicao);
+}
+
+.sobre__contrate:hover {
+    transform: translateY(-3px);
+    border-color: var(--rosa-principal);
+    box-shadow: var(--sombra-hover);
 }
 
 .sobre__contrate strong {
+    display: block;
+    font-family: var(--font-principal);
     font-size: 14px;
-
-    font-weight: normal;
-
-    color: #BDB5DF;
+    font-weight: 600;
+    color: var(--branco);
 }
 
 .sobre__contrate p {
+    font-family: var(--font-principal);
     font-size: 12px;
-
-    color: white;
-
-    margin-top: 2px;
+    color: var(--texto-secundario);
+    margin-top: 3px;
 }
 
 .sobre__contrate a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 9px 20px;
 
     border-radius: 25px;
+    border: 1px solid var(--rosa-principal);
 
-    background: #E51CAF;
+    background: var(--rosa-principal);
+    color: var(--branco);
 
-    color: white;
-
+    font-family: var(--font-principal);
     font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
 
-    font-weight: bold;
+    transition: background var(--transicao),
+                color var(--transicao),
+                transform var(--transicao);
 }
+
+.sobre__contrate a:hover {
+    background: var(--branco);
+    color: var(--rosa-principal);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   LINKS OCULTOS
+========================= */
 
 .sobre__links {
     display: none;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .sobre {
+        padding: 35px 30px;
+    }
+
+    .sobre__imagem {
+        right: 20px;
+        top: -105px;
+        width: 125px;
+    }
+
+    .sobre__titulo p {
+        max-width: calc(100% - 140px);
+    }
+
+    .sobre__cards {
+        gap: 14px;
+    }
+
+    .sobre__card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .sobre {
+        padding: 30px 20px;
+    }
+
+    .sobre__imagem {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 130px;
+        margin: 0 auto 20px;
+    }
+
+    .sobre__titulo p {
+        max-width: 100%;
+    }
+
+    .sobre__cards {
+        flex-direction: column;
+    }
+
+    .sobre__card {
+        min-height: 160px;
+    }
+
+    .sobre__contrate {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .sobre__titulo h2 {
+        font-size: 25px;
+    }
+
+    .sobre__contrate {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sobre__contrate a {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
